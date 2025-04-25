@@ -7,7 +7,7 @@
 cmake_minimum_required(VERSION 3.29)
 
 #######################################################
-project(vireo_samples)
+project(vireo_template)
 if (NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/.env.cmake")
     message(FATAL_ERROR "Please create a .env.cmake file with the VIREO_PROJECT_DIR variable")
 endif ()
@@ -62,7 +62,7 @@ set(COMMON_SOURCES
         ${SRC_DIR}/os/windows/Win32Application.cpp
 )
 set(COMMON_MODULES
-        ${SRC_DIR}/samples/Application.ixx
+        ${SRC_DIR}/Application.ixx
         ${SRC_DIR}/os/windows/Win32Application.ixx
 )
 
@@ -96,8 +96,8 @@ function(build_target TARGET_NAME SRCS MODULES)
 endfunction()
 
 #######################################################
-#set(MY_TARGET_SRC
-#        ${SRC_DIR}/MyApp.cpp
-#        ${SRC_DIR}/MyAppMain.cpp)
-#set(MY_TARGET_MODULES ${SRC_DIR}/MyApp.ixx)
-#build_target(myapp "${MY_TARGET_SRC}" ${MY_TARGET_MODULES})
+set(MY_TARGET_SRC
+        ${SRC_DIR}/MyApp.cpp
+        ${SRC_DIR}/MyAppMain.cpp)
+set(MY_TARGET_MODULES ${SRC_DIR}/MyApp.ixx)
+build_target(myapp "${MY_TARGET_SRC}" ${MY_TARGET_MODULES})
