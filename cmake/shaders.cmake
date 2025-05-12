@@ -51,8 +51,6 @@ function(add_shader EXTENSION PROFILE ENTRY_POINT SHADER_SOURCE SHADER_BINARIES 
     set(SHADER_COMMANDS "${GLOBAL_SHADER_COMMANDS};${LOCAL_COMMANDS}" PARENT_SCOPE)
     set(GLOBAL_SHADER_PRODUCTS "${SHADER_PRODUCTS}")
     set(SHADER_PRODUCTS "${GLOBAL_SHADER_PRODUCTS};${LOCAL_PRODUCTS}" PARENT_SCOPE)
-
-    message("${LOCAL_PRODUCTS}")
 endfunction()
 
 function(add_shaders TARGET_NAME BUILD_DIR SHADER_INCLUDE_DIR)
@@ -61,7 +59,7 @@ function(add_shaders TARGET_NAME BUILD_DIR SHADER_INCLUDE_DIR)
 
     list(LENGTH SHADER_SOURCE_FILES FILE_COUNT)
     if(FILE_COUNT EQUAL 0)
-        message(FATAL_ERROR "Cannot create a shaders target without any source files")
+        return()
     endif()
 
     file(MAKE_DIRECTORY ${SHADER_BINARIES})
