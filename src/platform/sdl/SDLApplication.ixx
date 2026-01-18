@@ -6,7 +6,7 @@
 */
 module;
 #include "Libraries.h"
-export module samples.sdl;
+export module app.sdl;
 
 import app;
 

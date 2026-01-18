@@ -6,7 +6,7 @@
 */
 module;
 #include "Libraries.h"
-export module samples.win32;
+export module app.win32;
 
 import app;
 

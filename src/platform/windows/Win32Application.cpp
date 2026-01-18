@@ -6,7 +6,7 @@
  */
 module;
 #include "Libraries.h"
-module samples.win32;
+module app.win32;
 
 import vireo.tools;
 

@@ -106,12 +106,8 @@ function(build_target TARGET_NAME SRCS MODULES)
     compile_options(${TARGET_NAME})
     target_include_directories(${TARGET_NAME} PUBLIC ${INCLUDE_DIR} ${VIREO_INCLUDE_DIR})
     target_link_libraries(${TARGET_NAME} ${VIREO_TARGET} glm::glm glm-modules std-cxx-modules)
-    add_dependencies(${TARGET_NAME} ${VIREO_TARGET})
+    add_dependencies(${TARGET_NAME} ${VIREO_TARGET}) # Add 'shaders' if you want to compile the shaders with the target
     if(WIN32)
-        target_precompile_headers(${TARGET_NAME} PRIVATE
-                "<windows.h>"
-                "<cstdint>"
-        )
         if (DIRECTX_BACKEND)
             target_link_libraries(${TARGET_NAME} Xinput dinput8 dxguid dxgi d3d12 d3dcompiler)
         endif ()
