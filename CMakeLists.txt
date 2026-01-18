@@ -89,11 +89,17 @@ endif ()
 #######################################################
 function(build_target TARGET_NAME SRCS MODULES)
     message("Building target ${TARGET_NAME}")
-    add_executable(${TARGET_NAME} ${COMMON_SOURCES} ${SRCS})
+    add_executable(${TARGET_NAME}
+            ${LINUX_SOURCES}
+            ${WIN32_SOURCES}
+            ${COMMON_SOURCES}
+            ${SRCS})
     target_sources(${TARGET_NAME}
         PUBLIC
         FILE_SET CXX_MODULES
         FILES
+            ${LINUX_MODULES}
+            ${WIN32_MODULES}
             ${COMMON_MODULES}
             ${MODULES}
     )

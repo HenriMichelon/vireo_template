@@ -8,7 +8,7 @@ module;
 #include "Libraries.h"
 export module samples.win32;
 
-import samples.app;
+import app;
 
 export namespace samples {
 

@@ -8,7 +8,7 @@ module;
 #include "Libraries.h"
 export module samples.sdl;
 
-import samples.app;
+import app;
 
 export namespace samples {
 
